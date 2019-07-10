@@ -257,8 +257,6 @@ class TestDocumentReference(unittest.TestCase):
         # Attach the fake GAPIC to a real client.
         client = _make_client("dignity")
         client._firestore_api_internal = firestore_api
-        client.get_all = mock.MagicMock()
-        client.get_all.exists.return_value = True
 
         # Actually make a document and call create().
         document = self._make_one("foo", "twelve", client=client)
